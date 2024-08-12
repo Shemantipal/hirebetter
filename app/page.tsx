@@ -7,13 +7,13 @@ import PricingSection from "@/components/LandingPage/PricingSection";
 import TestimonialSection from "@/components/LandingPage/TestimonialSection";
 import ToolSection from "@/components/LandingPage/ToolSection";
 import TrustedSection from "@/components/LandingPage/TrustedSection";
-import { TypographyH1 } from "@/components/ui/typography";
+import { TypographyH2 } from "@/components/ui/typography";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="h-full w-full container mx-auto py-10">
-      <TypographyH1 className="font-schoolbell">Home</TypographyH1>
+    <main className="min-h-screen w-full container mx-auto py-10 bg-[#dffd6e]">
+      <TypographyH2 className="font-schoolbell">HireBetter</TypographyH2>
       <HeroSection />
       <FeaturedVideoSection />
       <FeatureSection />
