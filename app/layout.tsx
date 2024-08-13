@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${schoolbell.variable} w-screen h-screen`}>
+      <body className={`${inter.className} ${schoolbell.variable} w-screen h-screen  dark:bg-black bg-sky-200 dark:bg-dot-white/[0.2] bg-dot-black/[0.9]`}>
         {children}
       </body>
     </html>

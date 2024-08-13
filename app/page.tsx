@@ -12,10 +12,10 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full container mx-auto py-10 bg-[#dffd6e]">
-      <TypographyH2 className="font-schoolbell">HireBetter</TypographyH2>
+    <main className="min-h-screen w-full container mx-auto py-10">
+      {/* <TypographyH2 className="font-schoolbell">HireBetter</TypographyH2> */}
       <HeroSection />
-      <FeaturedVideoSection />
+      {/* <FeaturedVideoSection /> */}
       <FeatureSection />
       <ToolSection />
       <PricingSection />
