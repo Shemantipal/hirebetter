@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Schoolbell } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/shared/Navbar";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "next-themes";
+import { cn } from "@/lib/utils";
 
 const schoolbell = Schoolbell(
   {
@@ -13,6 +17,7 @@ const schoolbell = Schoolbell(
 const inter = Inter({
   subsets: ["latin"],
   weight: "400",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -26,9 +31,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} ${schoolbell.variable} w-screen h-screen  dark:bg-black bg-sky-200 dark:bg-dot-white/[0.2] bg-dot-black/[0.9]`}>
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn(
+        "min-h-screen bg-background font-sans antialiased mx-auto",
+        inter.variable,
+        schoolbell.variable,
+        inter.className,
+      )}
+      >
+        <ThemeProvider attribute="class" defaultTheme="light">
+          <TooltipProvider delayDuration={0}>
+            {children}
+            <Navbar />
+          </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

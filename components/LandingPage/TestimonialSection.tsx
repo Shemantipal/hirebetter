@@ -2,13 +2,12 @@ import React from 'react';
 import Marquee from "@/components/ui/marquee";
 import { cn } from '@/lib/utils';
 import { testimonials } from '@/data/testimonial';
-import { TypographyH1 } from '../ui/typography';
+import { TypographyH1, TypographyH2 } from '../ui/typography';
 
 // testimonials = 40
 function TestimonialSection() {
-    const firstRow = testimonials.slice(0, Math.floor(testimonials.length / 3)); // 1/4
-    const secondRow = testimonials.slice(Math.floor(testimonials.length / 3), Math.floor(testimonials.length * 2 / 3));// 2/4
-    const thirdRow = testimonials.slice(Math.floor(testimonials.length / 2)); // 3/4
+    const firstRow = testimonials.slice(0, testimonials.length / 2);
+    const thirdRow = testimonials.slice(testimonials.length / 2);
 
     return (
         <div className='overflow-hidden'>
@@ -24,13 +23,8 @@ function TestimonialSection() {
                         <ReviewCard key={review.username} {...review} />
                     ))}
                 </Marquee>
-                <Marquee pauseOnHover className="[--duration:50s]">
-                    {secondRow.map((review) => (
-                        <ReviewCard key={review.username} {...review} />
-                    ))}
-                </Marquee>
-                <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-sky-200 dark:from-background"></div>
-                <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-sky-200 dark:from-background"></div>
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-background"></div>
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-background"></div>
             </div>
         </div>
     );
@@ -52,7 +46,7 @@ const ReviewCard = ({
     return (
         <figure
             className={cn(
-                "relative w-64 cursor-pointer bg-slate-900 overflow-hidden rounded-xl border p-4",
+                "relative w-64 cursor-pointer dark:bg-slate-900 bg-slate-300 overflow-hidden rounded-xl border p-4",
                 // light styles
                 "border-gray-100/[.1] hover:bg-gray-150/[.05]",
                 // dark styles
@@ -62,10 +56,10 @@ const ReviewCard = ({
             <div className="flex flex-row items-center gap-2">
                 <img className="rounded-full" width="32" height="32" alt="" src={img} />
                 <div className="flex flex-col">
-                    <figcaption className="text-sm font-medium text-white">
+                    <figcaption className="text-sm font-medium dark:text-white">
                         {name}
                     </figcaption>
-                    <p className="text-xs font-medium text-white/40">{username}</p>
+                    <p className="text-xs font-medium dark:text-white/40">{username}</p>
                 </div>
             </div>
             <blockquote className="mt-2 text-sm text-green-700">{body}</blockquote>

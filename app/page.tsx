@@ -7,22 +7,19 @@ import PricingSection from "@/components/LandingPage/PricingSection";
 import TestimonialSection from "@/components/LandingPage/TestimonialSection";
 import ToolSection from "@/components/LandingPage/ToolSection";
 import TrustedSection from "@/components/LandingPage/TrustedSection";
-import { TypographyH2 } from "@/components/ui/typography";
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full container mx-auto py-10">
-      {/* <TypographyH2 className="font-schoolbell">HireBetter</TypographyH2> */}
+    <>
       <HeroSection />
       {/* <FeaturedVideoSection /> */}
-      <FeatureSection />
+      {/* <FeatureSection /> */}
       <ToolSection />
-      <PricingSection />
-      <TrustedSection />
+      {/* <PricingSection /> */}
+      {/* <TrustedSection /> */}
       <TestimonialSection />
-      <CTA />
+      {/* <CTA /> */}
       <FrequentlyAskedQuestionSection />
-    </main>
+    </>
   );
 }
