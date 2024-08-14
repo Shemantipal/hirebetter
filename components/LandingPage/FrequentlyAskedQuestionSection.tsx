@@ -14,7 +14,7 @@ function FrequentlyAskedQuestionSection() {
             return (
               <AccordionItem key={index} aria-label={faq.question}
                 classNames={{
-                  title: 'ark:text-black text-black',
+                  title: 'text-black',
                 }}
                 title={faq.question} className='bg-[#dffd6e]/90 rounded-md w-full dark:text-black text-black'>
                 {faq.answer}
