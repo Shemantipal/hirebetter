@@ -2,7 +2,7 @@ import React from 'react'
 import { BentoCard, BentoGrid } from '../ui/bento-grid'
 
 import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
-import { BellIcon, Share2Icon } from "lucide-react";
+import { BellIcon, Share2Icon ,SearchCheck, Bot,ChartSpline,ScanEye} from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Calendar } from "@/components/ui/calendar";
@@ -10,38 +10,38 @@ import Marquee from '../ui/marquee';
 import { AnimatedList } from '../ui/animated-list';
 import { AnimatedListDemo } from './AnimatedListExample';
 import { AnimatedBeamMultipleOutputDemo } from './AnimatedBeam';
-import { TypographyH1, TypographyH2 } from '../ui/typography';
+import { TypographyH1, TypographyH2, TypographyH3, TypographyP } from '../ui/typography';
 
 
 const files = [
     {
-        name: "bitcoin.pdf",
-        body: "Bitcoin is a cryptocurrency invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto.",
+        name: "candidate_ranker.py",
+        body: "Python algorithm that calculates candidate rankings based on their GitHub and LinkedIn data.",
     },
     {
-        name: "finances.xlsx",
-        body: "A spreadsheet or worksheet is a file made of rows and columns that help sort data, arrange data easily, and calculate numerical data.",
+        name: "ranking_criteria.json",
+        body: "JSON file defining the weighting and importance of various GitHub and LinkedIn metrics in the ranking algorithm",
     },
     {
-        name: "logo.svg",
-        body: "Scalable Vector Graphics is an Extensible Markup Language-based vector image format for two-dimensional graphics with support for interactivity and animation.",
+        name: "skill_assessment.xlsx",
+        body: "Excel spreadsheet containing various skill assessment tests and their scoring matrices for different job roles.",
     },
     {
-        name: "keys.gpg",
-        body: "GPG keys are used to encrypt and decrypt email, files, directories, and whole disk partitions and to authenticate messages.",
+        name: "ai_matching_algorithm.ipynb",
+        body: "Jupyter notebook with machine learning algorithms for matching candidates to job openings based on various parameters.",
     },
     {
-        name: "seed.txt",
-        body: "A seed phrase, seed recovery phrase or backup seed phrase is a list of words which store all the information needed to recover Bitcoin funds on-chain.",
+        name: "resume_rank_adjuster.rb",
+        body: "Ruby script that adjusts candidate rankings based on the correlation between resume claims and verifiable GitHub/LinkedIn data.",
     },
 ];
 
 
 const features = [
     {
-        Icon: FileTextIcon,
-        name: "Save your files",
-        description: "We automatically save your files as you type.",
+        Icon: Bot,
+        name: "AI-Powered Ranking",
+        description: "Our algorithm continuously refines candidate rankings based on their GitHub contributions and LinkedIn achievements",
         href: "#",
         cta: "Learn more",
         className: "col-span-3 lg:col-span-1",
@@ -74,9 +74,9 @@ const features = [
         ),
     },
     {
-        Icon: BellIcon,
-        name: "Notifications",
-        description: "Get notified when something happens.",
+        Icon: SearchCheck,
+        name: "A Transparency",
+        description: "Watch the leaderboard evolve in real-time. Know your standing and why.",
         href: "#",
         cta: "Learn more",
         className: "col-span-3 lg:col-span-2",
@@ -85,9 +85,9 @@ const features = [
         ),
     },
     {
-        Icon: Share2Icon,
-        name: "Integrations",
-        description: "Supports 100+ integrations and counting.",
+        Icon: ScanEye,
+        name: "Review Resume",
+        description: "See where your resume shines and where it needs work—AI has the answers.",
         href: "#",
         cta: "Learn more",
         className: "col-span-3 lg:col-span-2",
@@ -96,9 +96,9 @@ const features = [
         ),
     },
     {
-        Icon: CalendarIcon,
-        name: "Calendar",
-        description: "Use the calendar to filter your files by date.",
+        Icon: ChartSpline,
+        name: "Progress Pulse",
+        description: "Measure your momentum—because growth never stops.",
         className: "col-span-3 lg:col-span-1",
         href: "#",
         cta: "Learn more",
@@ -116,9 +116,9 @@ const features = [
 function ToolSection() {
     return (
         <div className='container mx-auto'>
-            <TypographyH1 className="text-center py-4 font-schoolbell">
-                What went missing in the last 10 years?
-            </TypographyH1>
+            <TypographyH2 className="text-center py-4 font-mono text-xl">
+            What’s Lacking in Today’s Complex Job Market?
+            </TypographyH2>
             <BentoGrid>
                 {features.map((feature, idx) => (
                     <BentoCard key={idx} {...feature} />
