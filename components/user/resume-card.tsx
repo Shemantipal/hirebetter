@@ -60,19 +60,6 @@ export const ResumeCard = ({
                         <div className="flex items-center justify-between gap-x-2 text-base">
                             <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
                                 {title}
-                                {badges && (
-                                    <span className="inline-flex gap-x-1">
-                                        {badges.map((badge, index) => (
-                                            <Badge
-                                                variant="secondary"
-                                                className="align-middle text-xs"
-                                                key={index}
-                                            >
-                                                {badge}
-                                            </Badge>
-                                        ))}
-                                    </span>
-                                )}
                                 <ChevronRightIcon
                                     className={cn(
                                         "size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
@@ -84,6 +71,19 @@ export const ResumeCard = ({
                                 {period}
                             </div>
                         </div>
+                        {badges && (
+                            <span className="inline-flex gap-x-1">
+                                {badges.map((badge, index) => (
+                                    <Badge
+                                        variant="secondary"
+                                        className="align-middle text-xs"
+                                        key={index}
+                                    >
+                                        {badge}
+                                    </Badge>
+                                ))}
+                            </span>
+                        )}
                         {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
                     </CardHeader>
                     {description && (
