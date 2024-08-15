@@ -2,7 +2,7 @@ import React from 'react';
 import Marquee from "@/components/ui/marquee";
 import { cn } from '@/lib/utils';
 import { testimonials } from '@/data/testimonial';
-import { TypographyH1, TypographyH2 } from '../ui/typography';
+import { TypographyH1, TypographyH2, TypographyH3 } from '../ui/typography';
 
 // testimonials = 40
 function TestimonialSection() {
@@ -11,7 +11,7 @@ function TestimonialSection() {
 
     return (
         <div className='overflow-hidden'>
-            <TypographyH1 className="text-center py-4 font-schoolbell">Testimonials</TypographyH1>
+            <TypographyH2 className="text-center py-4 font-mono">Testimonials</TypographyH2>
             <div className="relative flex w-full flex-col items-center justify-center overflow-hidden p-4">
                 <Marquee pauseOnHover className="[--duration:50s]">
                     {firstRow.map((review) => (
