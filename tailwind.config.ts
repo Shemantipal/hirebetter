@@ -11,7 +11,6 @@ const {
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
@@ -121,6 +120,7 @@ const config = {
   },
   plugins: [
     addVariablesForColors,
+    require("@tailwindcss/typography"),
     require("tailwindcss-animate"),
     function ({ matchUtilities, theme }: any) {
       matchUtilities(

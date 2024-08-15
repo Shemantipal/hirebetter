@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Marquee from "@/components/ui/marquee";
 import { cn } from '@/lib/utils';
@@ -54,7 +55,11 @@ const ReviewCard = ({
             )}
         >
             <div className="flex flex-row items-center gap-2">
-                <img className="rounded-full" width="32" height="32" alt="" src={img} />
+                <img className="rounded-full"
+                    width="32" height="32"
+                    alt=""
+                    src={`https://avatar.iran.liara.run/public/${Math.random() * 10}`}
+                />
                 <div className="flex flex-col">
                     <figcaption className="text-sm font-medium dark:text-white">
                         {name}
