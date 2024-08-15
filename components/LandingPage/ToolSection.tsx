@@ -2,7 +2,7 @@ import React from 'react'
 import { BentoCard, BentoGrid } from '../ui/bento-grid'
 
 import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
-import { BellIcon, Share2Icon ,SearchCheck, Bot,ChartSpline,ScanEye} from "lucide-react";
+import { BellIcon, Share2Icon, SearchCheck, Bot, ChartSpline, ScanEye } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Calendar } from "@/components/ui/calendar";
@@ -75,7 +75,7 @@ const features = [
     },
     {
         Icon: SearchCheck,
-        name: "A Transparency",
+        name: "Transparency",
         description: "Watch the leaderboard evolve in real-time. Know your standing and why.",
         href: "#",
         cta: "Learn more",
@@ -86,8 +86,8 @@ const features = [
     },
     {
         Icon: ScanEye,
-        name: "Review Resume",
-        description: "See where your resume shines and where it needs work—AI has the answers.",
+        name: "Building Profile",
+        description: "we scan your GitHub and LinkedIn profiles to build a comprehensive profile of your skills and achievements.",
         href: "#",
         cta: "Learn more",
         className: "col-span-3 lg:col-span-2",
@@ -117,7 +117,7 @@ function ToolSection() {
     return (
         <div className='container mx-auto'>
             <TypographyH2 className="text-center py-4 font-mono text-xl">
-            What’s Lacking in Today’s Complex Job Market?
+                What’s Lacking in Today’s Complex Job Market?
             </TypographyH2>
             <BentoGrid>
                 {features.map((feature, idx) => (
