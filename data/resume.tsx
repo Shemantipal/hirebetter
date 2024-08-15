@@ -26,8 +26,7 @@ export const DATA = {
     ],
     navbar: [
         { href: "/", icon: HomeIcon, label: "Home" },
-        { href: "/blog", icon: NotebookIcon, label: "Blog" },
-        { href: "/about", icon: Fingerprint, label: "About Me" },
+        { href: "/blog", icon: NotebookIcon, label: "Blog" }
     ],
     contact: {
         email: "abhishekkushwahahere@gmail.com",

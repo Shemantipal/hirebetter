@@ -10,7 +10,7 @@ import {
 
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { BackpackIcon, BookmarkFilledIcon, HomeIcon, RocketIcon } from "@radix-ui/react-icons";
+import { BackpackIcon, BookmarkFilledIcon, DashboardIcon, HomeIcon, RocketIcon } from "@radix-ui/react-icons";
 import { NotebookIcon } from "lucide-react";
 
 
@@ -40,7 +40,7 @@ const secondary = [
     },
     {
         label: "Discover Projects",
-        href: "/projects",
+        href: "/project",
         icon: BookmarkFilledIcon,
     }
 ];
@@ -95,6 +95,24 @@ export default function Navbar() {
                     </DockIcon>
                 ))}
                 <Separator orientation="vertical" className="h-full py-2" />
+                <DockIcon>
+                    <Tooltip>
+                        <TooltipTrigger asChild>
+                            <Link
+                                href={`/dashboard`}
+                                className={cn(
+                                    buttonVariants({ variant: "ghost", size: "icon" }),
+                                    "size-12"
+                                )}
+                            >
+                                <DashboardIcon className="size-4" />
+                            </Link>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                            <p>Dashboard</p>
+                        </TooltipContent>
+                    </Tooltip>
+                </DockIcon>
                 <DockIcon>
                     <Tooltip>
                         <TooltipTrigger asChild>

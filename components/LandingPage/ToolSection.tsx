@@ -116,7 +116,7 @@ const features = [
 function ToolSection() {
     return (
         <div className='container mx-auto'>
-            <TypographyH2 className="text-center py-4 font-mono text-xl">
+            <TypographyH2 className="text-center py-4 font-mono">
                 What’s Lacking in Today’s Complex Job Market?
             </TypographyH2>
             <BentoGrid>
