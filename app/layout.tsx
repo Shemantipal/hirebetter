@@ -5,6 +5,11 @@ import { ThemeProvider } from "next-themes";
 import { Inter, Schoolbell } from "next/font/google";
 import { cn } from "@nextui-org/react";
 import { SITE_METADATA } from "@/data/site";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { extractRouterConfig } from "uploadthing/server";
+
+import { ourFileRouter } from "@/app/api/uploadthing/core";
+import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_METADATA.url),
@@ -57,7 +62,7 @@ const inter = Inter({
 });
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -68,11 +73,22 @@ export default function RootLayout({
         schoolbell.variable,
         inter.className,
       )}>
-        <ThemeProvider attribute="class" defaultTheme="light">
-          <TooltipProvider delayDuration={2}>
-            {children}
-          </TooltipProvider>
-        </ThemeProvider>
+        <NextSSRPlugin
+          /**
+           * The `extractRouterConfig` will extract **only** the route configs
+           * from the router to prevent additional information from being
+           * leaked to the client. The data passed to the client is the same
+           * as if you were to fetch `/api/uploadthing` directly.
+           */
+          routerConfig={extractRouterConfig(ourFileRouter)}
+        />
+        <SessionProvider>
+          <ThemeProvider attribute="class" defaultTheme="light">
+            <TooltipProvider delayDuration={2}>
+              {children}
+            </TooltipProvider>
+          </ThemeProvider>
+        </SessionProvider>
       </body>
     </html>
   );
