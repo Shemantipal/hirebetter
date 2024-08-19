@@ -1,6 +1,6 @@
 export const SITE_METADATA = {
-    title: "Abhishek Chaudhary",
-    description: "I'm a software engineer who loves to build things.",
+    title: "BetterHire",
+    description: "Algorithmic Hiring for the Digital Age",
     url: "https://abbhishek.com",
     tags: ["Software Engineer", "Full Stack Developer", "React", "Node.js", "TypeScript"],
     image: "/avatar.jpg",

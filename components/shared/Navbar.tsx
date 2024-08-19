@@ -12,6 +12,8 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { BackpackIcon, BookmarkFilledIcon, DashboardIcon, HomeIcon, RocketIcon } from "@radix-ui/react-icons";
 import { NotebookIcon } from "lucide-react";
+import ActiveUserProfile from "./ActiveUserProfile";
+import { auth } from "@/lib/auth";
 
 
 const navbar = [
@@ -45,7 +47,10 @@ const secondary = [
     }
 ];
 
-export default function Navbar() {
+export default async function Navbar() {
+
+    let session = await auth();
+
     return (
         <div className="pointer-events-none fixed inset-x-0 bottom-20 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14">
             <div className="fixed bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background"></div>
@@ -99,13 +104,13 @@ export default function Navbar() {
                     <Tooltip>
                         <TooltipTrigger asChild>
                             <Link
-                                href={`/dashboard`}
+                                href={session?.user ? `/dashboard` : `/login`}
                                 className={cn(
                                     buttonVariants({ variant: "ghost", size: "icon" }),
                                     "size-12"
                                 )}
                             >
-                                <DashboardIcon className="size-4" />
+                                {session ? <ActiveUserProfile /> : <DashboardIcon className="size-4" />}
                             </Link>
                         </TooltipTrigger>
                         <TooltipContent>
